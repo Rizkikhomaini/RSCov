@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/sliding_layout_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        sothree:umanoFadeColor="#00000000"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="200dp"
+        sothree:umanoParallaxOffset="69dp"
+        sothree:umanoScrollableView="@id/hospital_detail"
+        sothree:umanoShadowHeight="0dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:theme="@style/ToolBarStyle" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/detail_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/hospital_detail"
+            layout="@layout/hospital_detail" />
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+    <Button
+        android:id="@+id/btn_route"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:text="Petunjuk Arah"
+        android:fontFamily="@font/montserratbold"
+        android:textAllCaps="false"
+        android:focusable="true"
+        android:clickable="true"
+        android:textColor="@color/white" />
+</LinearLayout>

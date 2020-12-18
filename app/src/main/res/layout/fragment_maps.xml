@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoFadeColor="#00000000"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="200dp"
+    sothree:umanoParallaxOffset="69dp"
+    sothree:umanoScrollableView="@id/prov_rv"
+    sothree:umanoShadowHeight="0dp">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/prov_map_view"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/maps_title"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/opensanssemibold"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/prov_collected_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/loading_text"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/opensansregular"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sumber data dari data.covid19.go.id"
+                    android:fontFamily="@font/opensansregular"
+                    android:textSize="13sp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <include
+        android:id="@+id/prov_rv_holder"
+        layout="@layout/province_layout"/>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

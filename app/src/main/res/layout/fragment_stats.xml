@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".StatsFragment">
+
+    <com.nirhart.parallaxscroll.views.ParallaxScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        app:parallax_factor="1.5">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--  HEADER    -->
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:text="@string/lawan_covid_19"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+            </FrameLayout>
+
+            <!--  BODY  -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/bg_rsdetail"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/montserratbold"
+                        android:text="@string/berita"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray700"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/provinsi_lampung"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_berita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_berita" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/montserratbold"
+                        android:text="@string/kasus_indonesia"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <!-- text Update Kasus -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="Diperbarui pada : "
+                            android:textColor="@color/gray700"
+                            android:textSize="12sp"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:id="@+id/tvUpdateDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/montserratbold"
+                            android:text="Memuat.."
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp"
+                            tools:ignore="SmallSp" />
+
+                    </LinearLayout>
+
+                    <TableLayout
+                        android:id="@+id/stat_box_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- data kasus-->
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            tools:ignore="UselessLeaf">
+
+                            <!--Kasus Positif-->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="3dp"
+                                tools:targetApi="lollipop">
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:fontFamily="@font/montserratsemibold"
+                                        android:text="Positif"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"
+                                        tools:ignore="TooDeepLayout" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/stat_kasus_positif"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:padding="10dp"
+                                    android:fontFamily="@font/montserratsemibold"
+                                    android:text="@string/null_text"
+                                    android:textColor="@color/yellow"
+                                    android:textSize="22sp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <!-- Meninggal -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="3dp"
+                                tools:targetApi="lollipop">
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:fontFamily="@font/montserratsemibold"
+                                        android:text="Meninggal"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"
+                                        tools:ignore="TooDeepLayout" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/stat_kasus_meninggal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:padding="10dp"
+                                    android:fontFamily="@font/montserratsemibold"
+                                    android:text="@string/null_text"
+                                    android:textColor="@color/themeRed"
+                                    android:textSize="22sp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <!-- Kasus Sembuh -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="3dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="3dp"
+                                tools:targetApi="lollipop">
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:fontFamily="@font/montserratsemibold"
+                                        android:text="Sembuh"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp"
+                                        tools:ignore="TooDeepLayout" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/stat_kasus_sembuh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:padding="10dp"
+                                    android:fontFamily="@font/montserratsemibold"
+                                    android:text="@string/null_text"
+                                    android:textColor="@color/themeGreen"
+                                    android:textSize="22sp" />
+                            </androidx.cardview.widget.CardView>
+
+                        </TableRow>
+
+                        <!-- text Pencegahan -->
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginEnd="20dp"
+                            tools:ignore="UselessLeaf">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/opensansbold"
+                                android:text="Pencegahan"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </TableRow>
+
+                        <!-- Pencegahan -->
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            tools:ignore="UselessLeaf">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_preventive"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                tools:targetApi="lollipop">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="70dp"
+                                    android:gravity="center"
+                                    android:paddingTop="4dp"
+                                    android:src="@drawable/social_distancing"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:fontFamily="@font/montserratsemibold"
+                                    android:gravity="center"
+                                    android:text="Jaga Jarak Sosial"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_preventive"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                tools:targetApi="lollipop">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="70dp"
+                                    android:gravity="center"
+                                    android:paddingTop="4dp"
+                                    android:src="@drawable/wash_hand"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:fontFamily="@font/montserratsemibold"
+                                    android:gravity="center"
+                                    android:text="Sering Cuci Tangan"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_preventive"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                tools:targetApi="lollipop">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="70dp"
+                                    android:gravity="center"
+                                    android:paddingTop="4dp"
+                                    android:src="@drawable/wear_mask"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:fontFamily="@font/montserratsemibold"
+                                    android:gravity="center"
+                                    android:text="Pakailah Masker"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <include
+                            layout="@layout/layout_donasi_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="20dp" />
+
+                        <include
+                            layout="@layout/layout_tes_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="30dp" />
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.nirhart.parallaxscroll.views.ParallaxScrollView>
+
+</LinearLayout>

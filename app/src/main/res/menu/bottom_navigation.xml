@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/ic_beranda" />
+
+    <item
+        android:id="@+id/nav_information"
+        android:title="@string/menu_stats"
+        android:icon="@drawable/ic_coronavirus" />
+
+    <item
+        android:id="@+id/nav_maps"
+        android:title="@string/menu_maps"
+        android:icon="@drawable/ic_peta_sebaran" />
+
+    <item
+        android:id="@+id/nav_info"
+        android:title="@string/menu_info"
+        android:icon="@drawable/ic_informasi" />
+
+</menu>

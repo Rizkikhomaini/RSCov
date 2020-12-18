@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/five_km"
+        android:title="5 Km" />
+    <item
+        android:id="@+id/ten_km"
+        android:title="10 Km" />
+    <item
+        android:id="@+id/twenty_km"
+        android:title="20 Km" />
+    <item
+        android:id="@+id/thirty_km"
+        android:title="30 Km"/>
+</menu>
